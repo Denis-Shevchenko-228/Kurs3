@@ -10,6 +10,10 @@ def get_operations(path):
         return json.load(f)
 
 def replace_datetime(operation):
+    """
+    Функция принимает словарь операции и заменяет дату строкой
+    на дату объектом datetime для удобной последующей работы
+    """
     operation['date'] = datetime.strptime(
         operation.get('date'),
         '%Y-%m-%dT%H:%M:%S.%f'  # "2018-01-26T15:40:13.413061"
@@ -43,6 +47,10 @@ def get_string_operation(operation):
     )
 
 def string_operations_generator(operations, count):
+    """
+    Функция-генератор принимает операции и количество операций для возврата
+    Если операцию не получилось собрать соласно примеру, она не учитывается
+    """
     i = 0
     for operation in operations:
         try:
