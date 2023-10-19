@@ -27,7 +27,6 @@ def get_string_operation(operation):
         Visa Platinum 7000 79** **** 6361 -> Счет **9638
         82771.72 руб.
     """
-    state = operation.get('state')
     date = operation.get('date').strftime('%d.%m.%Y')  # Сразу в строке
     operation_amount = operation.get('operationAmount')
     amount = operation_amount.get('amount')
